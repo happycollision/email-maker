@@ -5,7 +5,9 @@ This is where the magic happens...
 <form>
   <label for="header">header: </label>{{input type="text" name="header" value=header}}<br>
   <label for="image">image: </label>{{input type="text" name="image" value=image}}<br>
-  {{format-markdown body}}
+  <label for="header2">header2: </label>{{input type="text" name="header2" value=header2}}<br>
+  {{ivy-codemirror mode="markdown" theme='neat' value=body lineNumbers=true lineWrapping=true}}
+
 </form>
 
     <table><tr><td class="background">
@@ -25,7 +27,7 @@ This is where the magic happens...
         <a class="button" href="#">Download My Resum&eacute;</a>
       </p>
 
-      {{body}}
+      {{markdown-section content=body}}
 
 
       <p>Sincerely, <br>
