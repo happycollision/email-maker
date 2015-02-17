@@ -1,0 +1,42 @@
+{{outlet}}
+
+This is where the magic happens...
+
+<form>
+  <label for="header">header: </label>{{input type="text" name="header" value=header}}<br>
+  <label for="image">image: </label>{{input type="text" name="image" value=image}}<br>
+  {{format-markdown body}}
+</form>
+
+    <table><tr><td class="background">
+    <div class="pre-header">
+      A test.
+    </div>
+    <div class="main-content">
+      <h1>
+        {{header}}
+      </h1>
+      <img {{bind-attr src=image}} />
+
+      <h2>{{header2}}</h2>
+
+      <p class="center">
+        <a class="button" href="#">My Video Submission</a>
+        <a class="button" href="#">Download My Resum&eacute;</a>
+      </p>
+
+      {{body}}
+
+
+      <p>Sincerely, <br>
+      Carol Rose <br><br>
+      <a href="mailto:rosecarolrose@gmail.com">rosecarolrose@gmail.com</a>
+      <a href="http://carolroseactress.com"><br>carolroseactress.com</a>
+      </p>
+
+      
+    </div>
+    <div class="catch">
+      &nbsp;
+    </div>
+    </td></tr></table>
