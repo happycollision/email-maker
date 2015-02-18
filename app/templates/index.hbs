@@ -1,12 +1,18 @@
 {{outlet}}
 
-This is where the magic happens...
 
-<form>
+<form class="params">
   <label for="header">header: </label>{{input type="text" name="header" value=header}}<br>
   <label for="image">image: </label>{{input type="text" name="image" value=image}}<br>
   <label for="header2">header2: </label>{{input type="text" name="header2" value=header2}}<br>
+  Body:<br><br>
   {{ivy-codemirror mode="markdown" theme='neat' value=body lineNumbers=true lineWrapping=true}}
+
+  {{this}}
+
+  {{#each this.photoset.photo as |photo| }}
+    {{photo}}
+  {{/each}}
 
 </form>
 
