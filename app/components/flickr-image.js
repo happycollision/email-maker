@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  id: null,
+  tagName: 'span',
+  imageId: null,
   desiredWidth: null,
   source: null,
 
@@ -31,11 +32,12 @@ export default Ember.Component.extend({
 
   getSizes: function(){
     var that = this;
-    var id = this.get('id');
+    var id = this.get('imageId');
     var key = this.get('key');
     var $promise;
 
-    if(id === null) {return;}
+    console.log(id);
+    if(id === null || id === undefined) {return;}
 
     $promise = $.ajax({
       url: 'https://api.flickr.com/services/rest/',
@@ -51,5 +53,5 @@ export default Ember.Component.extend({
     $promise.done(function(response){
       that.set('sizes', response.sizes.size);
     });
-  }.observes('id').on('init')
+  }.observes('imageId').on('init')
 });

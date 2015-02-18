@@ -2,45 +2,50 @@
 
 
 <form class="params">
-  <label for="header">header: </label>{{input type="text" name="header" value=header}}<br>
-  <label for="image">image: </label>{{input type="text" name="image" value=image}}<br>
-  <label for="header2">header2: </label>{{input type="text" name="header2" value=header2}}<br>
-  Body:<br><br>
-  {{ivy-codemirror mode="markdown" theme='neat' value=body lineNumbers=true lineWrapping=true}}
-
-  {{flickr-image id="2423496036" desiredWidth="75"}}
-
+  <label for="header" class="text-label">Before Image:</label>
+  {{input type="text" name="header" value=header}}
+  <label for="header2" class="text-label">After Image:</label>
+  {{input type="text" name="header2" value=header2}}
+  
+  <label class="text-label">Choose an image below</label>
+  {{flickr-pickr galleryId="72157650653171405" desiredWidth="75" chosenId=chosenId}}
+  
+  <label class="text-label">Body: (Edit the text below using Markdown.)</label>
+  {{ivy-codemirror mode="markdown" theme='neat' value=body lineNumbers=false lineWrapping=true}}
 </form>
 
-    <table><tr><td class="background">
-    <div class="pre-header">
-      A test.
-    </div>
-    <div class="main-content">
-      <h1>
-        {{header}}
-      </h1>
-      <img {{bind-attr src=image}} />
 
-      <h2>{{header2}}</h2>
+<div id="the-email">
+  <table><tr><td class="background">
+  <div class="pre-header">
+    A test.
+  </div>
+  <div class="main-content">
+    <h1>
+      {{header}}
+    </h1>
+    {{flickr-image imageId=chosenId desiredWidth="400"}}
 
-      <p class="center">
-        <a class="button" href="#">My Video Submission</a>
-        <a class="button" href="#">Download My Resum&eacute;</a>
-      </p>
+    <h2>{{header2}}</h2>
 
-      {{markdown-section content=body}}
+    <p class="center">
+      <a class="button" href="#">My Video Submission</a>
+      <a class="button" href="#">Download My Resum&eacute;</a>
+    </p>
+
+    {{markdown-section content=body}}
 
 
-      <p>Sincerely, <br>
-      Carol Rose <br><br>
-      <a href="mailto:rosecarolrose@gmail.com">rosecarolrose@gmail.com</a>
-      <a href="http://carolroseactress.com"><br>carolroseactress.com</a>
-      </p>
+    <p>Sincerely, <br>
+    Carol Rose <br><br>
+    <a href="mailto:rosecarolrose@gmail.com">rosecarolrose@gmail.com</a>
+    <a href="http://carolroseactress.com"><br>carolroseactress.com</a>
+    </p>
 
-      
-    </div>
-    <div class="catch">
-      &nbsp;
-    </div>
-    </td></tr></table>
+    
+  </div>
+  <div class="catch">
+    &nbsp;
+  </div>
+  </td></tr></table>
+</div>

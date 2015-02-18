@@ -1,0 +1,7 @@
+{{#if imageIds}}
+  {{#each imageIds as |imageId|}}
+    {{#radio-button value=imageId groupValue=chosenId}}
+      {{flickr-image imageId=imageId desiredWidth=desiredWidth}}
+    {{/radio-button}}
+  {{/each}}
+{{/if}}
