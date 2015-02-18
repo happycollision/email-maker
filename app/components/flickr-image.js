@@ -6,30 +6,30 @@ export default Ember.Component.extend({
   source: null,
 
   key: 'c2dfff46955d313d86bcd1a051f57af7',
-  images: null,
+  sizes: null,
 
   setSource: function(){
     var dw = this.get('desiredWidth');
-    var images = this.get('images');
+    var sizes = this.get('sizes');
     var bestDiff = 1000000;
     var bestDiffId = null;
 
-    if( images === null ) {return;}
+    if( sizes === null ) {return;}
     if( dw === null ) {dw = 300;}
 
-    for (var i = images.length - 1; i >= 0; i--) {
-      var diff = Math.abs(images[i].width - dw);
+    for (var i = sizes.length - 1; i >= 0; i--) {
+      var diff = Math.abs(sizes[i].width - dw);
       if( diff < bestDiff ){
         bestDiff = diff;
         bestDiffId = i;
       }
     }
 
-    this.set('source', images[bestDiffId].source);
+    this.set('source', sizes[bestDiffId].source);
 
-  }.observes('images', 'desiredWidth'),
+  }.observes('sizes', 'desiredWidth'),
 
-  getImages: function(){
+  getSizes: function(){
     var that = this;
     var id = this.get('id');
     var key = this.get('key');
@@ -49,7 +49,7 @@ export default Ember.Component.extend({
     });
 
     $promise.done(function(response){
-      that.set('images', response.sizes.size);
+      that.set('sizes', response.sizes.size);
     });
   }.observes('id').on('init')
 });
