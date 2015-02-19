@@ -8,6 +8,14 @@ export default Ember.Component.extend({
   key: 'c2dfff46955d313d86bcd1a051f57af7',
   imageIds: null,
 
+  //Sets the first image as chosen if one isn't already chosen
+  setChosenId: function(){
+    var chosenId = this.get('chosenId');
+    var imageIds;
+    if ( chosenId !== null && chosenId !== undefined ) {return;}
+    imageIds = this.get('imageIds');
+    this.set('chosenId', imageIds[0]);
+  }.observes('imageIds'),
 
   getImages: function(){
     var that = this;
