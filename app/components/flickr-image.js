@@ -36,7 +36,6 @@ export default Ember.Component.extend({
     var key = this.get('key');
     var $promise;
 
-    console.log(id);
     if(id === null || id === undefined) {return;}
 
     $promise = $.ajax({
