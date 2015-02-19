@@ -7,16 +7,28 @@
   <label for="header2" class="text-label">After Image:</label>
   {{input type="text" name="header2" value=header2}}
   
-  <label for="video-text" class="text-label">Video Button Text:</label>
-  {{input type="text" name="video-text" value=vButtonText}}
-  <label for="video-link" class="text-label">Video Button Link:</label>
-  {{input type="text" name="video-link" value=vButtonLink}}
-  
-  <label for="resume-text" class="text-label">Resume Button Text:</label>
-  {{input type="text" name="resume-text" value=rButtonText}}
-  <label for="resume-link" class="text-label">Resume Button Link:</label>
-  {{input type="text" name="resume-link" value=rButtonLink}}
-  
+  <div class="button-value-group">
+    <div class="button-value">
+      <label for="video-text" class="text-label">Video Button Text:</label>
+      {{input type="text" name="video-text" value=vButtonText}}
+    </div>
+    <div class="button-value">
+      <label for="video-link" class="text-label">Video Button Link:</label>
+      {{input type="text" name="video-link" value=vButtonLink}}
+    </div>
+  </div>
+
+  <div class="button-value-group">
+    <div class="button-value">
+      <label for="resume-text" class="text-label">Resume Button Text:</label>
+      {{input type="text" name="resume-text" value=rButtonText}}
+    </div>
+    <div class="button-value">
+      <label for="resume-link" class="text-label">Resume Button Link:</label>
+      {{input type="text" name="resume-link" value=rButtonLink}}
+    </div>
+  </div>
+
   <label class="text-label">Choose an image below</label>
   {{flickr-pickr galleryId="72157650653171405" desiredWidth="75" chosenId=chosenId}}
   
