@@ -28,8 +28,16 @@ var app = new EmberApp({
       'tomorrow-night-eighties', 'twilight', 'vibrant-ink', 'xq-dark',
       'xq-light'
     ]
+  },
+
+  compassOptions: {
+    require: ['susy']
   }
 });
+
+if (app.env === 'development') {
+  app.options.compassOptions.outputStyle = 'expanded';
+}
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
