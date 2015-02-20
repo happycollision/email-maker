@@ -31,7 +31,7 @@ var app = new EmberApp({
   },
 
   compassOptions: {
-    require: ['susy']
+    require: ['susy', 'breakpoint']
   }
 });
 

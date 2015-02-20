@@ -1,9 +1,12 @@
-@import "compass"
+@import "compass", "breakpoint", "susy"
 
 $bg-color: #fff
 $accent-color: #b92f79
 $font-size: 16px
 $spacing-unit: 24px
+
+*
+  box-sizing: border-box
 
 .notice
   background-color: #eee
@@ -24,7 +27,7 @@ input, textarea
 body
   background-color: $bg-color
   margin: 0
-  padding: 0
+  padding: 8px
   font-family: helvetica, arial, sans
   font-size: $font-size
 
@@ -75,6 +78,11 @@ textarea
   .button-value:first-child
     width: 33%
     margin-right: 1%
+
+  .button-value, .button-value:first-child
+    +breakpoint(0px 600px)
+      width: 100%
+
 
 
 .ember-text-field 
