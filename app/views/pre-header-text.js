@@ -8,6 +8,8 @@ export default Ember.View.extend({
     binding.connect( this );
   },
 
+  classNameBindings: ['usePreHeader::disabled'],
+
   preHeaderInput: '',
   disablePreHeader: Em.computed.not('usePreHeader'),
   usePreHeader: false,
@@ -20,5 +22,31 @@ export default Ember.View.extend({
     } else {
       this.set('preHeader', preHeaderInput);
     }
-  }.observes('preHeaderInput', 'usePreHeader')
+  }.observes('preHeaderInput', 'usePreHeader'),
+
+  click: function(event, view){
+    var that = this;
+    var labelClick = function(){
+      if (that.get('usePreHeader') === false){
+        that.set('usePreHeader', true);
+      } else {
+        that.set('usePreHeader', false);
+      }
+    };
+    var editText = function(){
+      if (that.get('usePreHeader') === false){
+        that.set('usePreHeader', true);
+      }
+    };
+    
+    if (event.target.className === 'text-label pre-header-input'){
+      labelClick();
+    }
+    if (event.target.type === 'text') {
+      editText();
+    }
+  },
+
+  actions: {
+  }
 });

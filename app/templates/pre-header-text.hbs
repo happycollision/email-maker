@@ -1,4 +1,14 @@
-  <label for="pre-header" class="text-label pre-header-input">Pre-header text: {{input type="checkbox" checked=view.usePreHeader}}</label>
-  {{input type="text" class="pre-header-input" name="preheader" value=view.preHeaderInput disabled=view.disablePreHeader}}
+  <label for="pre-header" class="text-label pre-header-input">
+    Pre-header text: {{input type="checkbox" checked=view.usePreHeader}}
+    <span class="info-helper">
+      ?
+      <span>
+        In many email applications, the list of emails shows the first line or two of the body of the email. Whatever you put here will be the first thing they read in the list view of emails, but will be visually hidden on the actual email itself.
+      </span>
+    </span>
+  </label>
+  
+  {{input type="text" class="pre-header-input" name="preheader" value=view.preHeaderInput}}
+
 
 
