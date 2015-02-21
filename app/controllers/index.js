@@ -11,5 +11,6 @@ export default Ember.Controller.extend({
   rButtonText: "View My Resumé",
   rButtonLink: "http://happycollision.github.io/CarolRose-Website/resume/",
   vButtonText: "Watch My Videos",
-  vButtonLink: "http://happycollision.github.io/CarolRose-Website/media/"
+  vButtonLink: "http://happycollision.github.io/CarolRose-Website/media/",
+  
 });

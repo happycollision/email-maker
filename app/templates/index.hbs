@@ -34,13 +34,15 @@
   
   <label class="text-label">Body: (Edit the text below using <a href="http://howtomarkdown.com">Markdown</a>.)</label>
   {{textarea value=body}}
+
+  {{pre-header-text}}
 </form>
 
 
 <div id="the-email">
   <table><tr><td class="background">
   <div class="pre-header">
-    A test.
+    {{preHeader}}
   </div>
   <div class="main-content">
     <h1>
