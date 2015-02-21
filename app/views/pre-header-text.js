@@ -13,7 +13,7 @@ export default Ember.View.extend({
   preHeaderInput: '',
   disablePreHeader: Em.computed.not('usePreHeader'),
   usePreHeader: false,
-  preHeader: '&nbsp;',
+  preHeader: '&nbsp;'.htmlSafe(),
   preHeaderValue: function(){
     var preHeaderInput = this.get('preHeaderInput');
     var usePreHeader = this.get('usePreHeader');
@@ -24,7 +24,7 @@ export default Ember.View.extend({
     }
   }.observes('preHeaderInput', 'usePreHeader'),
 
-  click: function(event, view){
+  click: function(event){
     var that = this;
     var labelClick = function(){
       if (that.get('usePreHeader') === false){
