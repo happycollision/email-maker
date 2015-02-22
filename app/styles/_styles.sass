@@ -12,6 +12,25 @@ $spacing-unit: 24px
   color: #ccc
 
 
+.info-helper
+  & > *:first-child
+    text-decoration: underline
+    cursor: pointer
+    display: inline
+  & > *:nth-child(2)
+    display: none
+    text-decoration: none
+  &.active > *:nth-child(2)    
+    position: relative
+    display: block
+    text-decoration: none
+    margin: 12px
+    padding: 12px
+    background-color: #f9f9f9
+    border: 1px solid #ddd
+    color: #222
+    z-index: 0
+
 .notice
   background-color: #eee
   margin: auto
@@ -34,6 +53,7 @@ body
   padding: 8px
   font-family: helvetica, arial, sans
   font-size: $font-size
+  line-height: 1.5
 
 a, a:link, a:hover
   color: $accent-color
