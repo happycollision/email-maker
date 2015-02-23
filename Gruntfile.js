@@ -49,11 +49,20 @@ module.exports = function(grunt) {
       }
     },
 
+    copy: {
+      cname: {
+        src: 'CNAME',
+        dest: 'dist/CNAME',
+      },
+    },
+
   });
   // Default task.
   grunt.registerTask('default', ['build']);
 
-  grunt.registerTask('build', ['exec']);
+  grunt.registerTask('build', ['exec', 'copy']);
+
+  grunt.registerTask('deploy', ['build', 'buildcontrol']);
 
 
 };
