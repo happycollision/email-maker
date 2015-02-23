@@ -1,7 +1,4 @@
-{{outlet}}
-
-
-<form class="params">
+<form class="params" id="the-form">
   <label for="header" class="text-label">Before Image:</label>
   {{input type="text" name="header" value=header}}
   <label for="header2" class="text-label">After Image:</label>
@@ -35,7 +32,7 @@
   <label class="text-label">Body: (Edit the text below using 
     {{#view "info-pop"}}<span class="info-pop-trigger">Markdown</span>.)
       <span class="info-pop-info">
-        Markdown is a style of editing plain text in a way that tells the computer what you want it to do. For example, wrapping a word in asterisks (*) will tell the computer you want that word italicized. There's more info at <a href="http://howtomarkdown.com">howtomarkdown.com</a>.
+        Markdown is a style of editing plain text in a way that tells the computer what you want it to do. For example, wrapping a word in asterisks (*) will tell the computer you want that word italicized. There's more info at <a href="http://howtomarkdown.com">howtomarkdown.com</a>. Don't forget single line breaks are tricky... you need to end the previous line with two (or more) spaces.
       </span>
     {{/view}}
   </label>

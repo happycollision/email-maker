@@ -11,6 +11,11 @@ $spacing-unit: 24px
 .disabled input
   color: #ccc
 
+%info-helper-look
+  background-color: #f9f9f9
+  border: 1px solid #ddd
+  color: #222
+
 
 .info-helper
   & > *:first-child
@@ -18,25 +23,27 @@ $spacing-unit: 24px
     cursor: pointer
     display: inline
   & > *:nth-child(2)
+    @extend %info-helper-look
     display: none
     text-decoration: none
-  &.active > *:nth-child(2)    
     position: relative
-    display: block
     text-decoration: none
     margin: 12px
     padding: 12px
-    background-color: #f9f9f9
-    border: 1px solid #ddd
-    color: #222
     z-index: 0
+  &.active > *:nth-child(2)    
+    display: block
 
 .notice
-  background-color: #eee
+  @extend %info-helper-look
+  box-sizing: content-box
   margin: auto
   max-width: 600px
   padding: 16px
   left: -16px
+
+  +breakpoint(1100px)
+    max-width: 100%
 
 input, textarea
   border-radius: 0
@@ -73,7 +80,7 @@ textarea
   font-size: $font-size
   resize: none
   height: auto
-  min-height: 200px
+  min-height: 100px
   width: 100%
   padding-left: $spacing-unit / 2
   border: none
@@ -121,6 +128,17 @@ textarea
 
 #the-email
   padding: 72px 0
+
+  +breakpoint(1100px)
+    float: right
+    width: 50%
+    margin-left: 5px
+
+#the-form
+  +breakpoint(1100px)
+    float: left
+    width: 50%
+    margin-right: 5px
 
 table
   width: 100%
