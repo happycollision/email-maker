@@ -4,12 +4,22 @@ $bg-color: #fff
 $accent-color: #b92f79
 $font-size: 16px
 $spacing-unit: 24px
+$large: 1100px
 
 *
   box-sizing: border-box
 
 .disabled input
   color: #ccc
+
+.hide-large
+  +breakpoint($large)
+    display: none
+
+.show-large
+  display: none
+  +breakpoint($large)
+    display: block
 
 %info-helper-look
   background-color: #f9f9f9
