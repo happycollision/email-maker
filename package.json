@@ -1,7 +1,7 @@
 {
-  "name": "carol-email-maker",
+  "name": "magic-email-maker",
   "version": "0.0.0",
-  "description": "Small description for carol-email-maker goes here",
+  "description": "Small description for magic-email-maker goes here",
   "private": true,
   "directories": {
     "doc": "doc",

@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'carol-email-maker',
+    modulePrefix: 'magic-email-maker',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
