@@ -1,5 +1,3 @@
-var pkg = require('./package.json');
-
 /*global module:false*/
 module.exports = function(grunt) {
 
@@ -11,6 +9,8 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     // Task configuration.
+    pkg: require('./package.json'),
+
     exec:{
       build:{
         cmd: 'ember build --watch false --environment production'
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
           branch: 'gh-pages',
           commit: true,
           push: true,
-          tag: pkg.version
+          tag: '<%= pkg.version %>'
         }
       }
     },
@@ -33,15 +33,15 @@ module.exports = function(grunt) {
     bump: {
       options: {
         files: ['package.json'],
-        updateConfigs: [],
-        commit: false,
-        //commitMessage: 'Release v%VERSION%',
-        //commitFiles: ['package.json'],*/
-        //createTag: true,
-        //tagName: 'v%VERSION%',
-        //tagMessage: 'Version %VERSION%',
-        push: false,
-        //pushTo: 'upstream',
+        updateConfigs: ['pkg'],
+        commit: true,
+        commitMessage: 'Bump to v%VERSION%',
+        commitFiles: ['-a'],
+        createTag: true,
+        tagName: 'v%VERSION%',
+        tagMessage: 'Version %VERSION%',
+        push: true,
+        pushTo: 'origin',
         //gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
         //globalReplace: false,
         //prereleaseName: false,

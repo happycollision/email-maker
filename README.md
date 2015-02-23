@@ -1,7 +1,6 @@
-# Carol-email-maker
+# Happy Collision Magic Email Maker
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This project is used for my clients to help them build html emails to send out. I am leaving the standard Ember CLI created readme instructions below in case this project is helpful for anyone learning Ember CLI.
 
 ## Prerequisites
 
