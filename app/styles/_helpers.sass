@@ -1,0 +1,16 @@
+.disabled input
+  color: #ccc
+
+.hide-large
+  +breakpoint($large)
+    display: none
+
+.show-large
+  display: none
+  +breakpoint($large)
+    display: block
+
+.center
+  margin-left: auto
+  margin-right: auto
+  text-align: center

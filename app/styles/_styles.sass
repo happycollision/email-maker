@@ -1,31 +1,11 @@
-@import "compass", "breakpoint", "susy"
-
-$bg-color: #fff
-$accent-color: #b92f79
-$font-size: 16px
-$spacing-unit: 24px
-$large: 1100px
-
+@import "base", "define-colors"
 *
   box-sizing: border-box
-
-.disabled input
-  color: #ccc
-
-.hide-large
-  +breakpoint($large)
-    display: none
-
-.show-large
-  display: none
-  +breakpoint($large)
-    display: block
 
 %info-helper-look
   background-color: #f9f9f9
   border: 1px solid #ddd
   color: #222
-
 
 .info-helper
   & > *:first-child
@@ -64,6 +44,9 @@ input, textarea
   &:hover:focus
     background-color: transparent
 
+h1, h2, h3
+  text-align: center
+
 body
   background-color: $bg-color
   margin: 0
@@ -71,9 +54,6 @@ body
   font-family: helvetica, arial, sans
   font-size: $font-size
   line-height: 1.5
-
-a, a:link, a:hover
-  color: $accent-color
 
 .text-label 
   display: block
@@ -124,8 +104,6 @@ textarea
     +breakpoint(0px 600px)
       width: 100%
 
-
-
 .ember-text-field 
   margin-bottom: $spacing-unit / 2
   font-size: $font-size * 2
@@ -133,8 +111,15 @@ textarea
   border: none
   border-bottom: 1px dotted
 
-  .button-value
+#the-form
+  max-width: 600px
+  margin: auto
+  margin-bottom: 48px
 
+  +breakpoint($large)
+    float: left
+    width: 50%
+    margin-right: 5px
 
 #the-email
   padding: 72px 0
@@ -144,55 +129,5 @@ textarea
     width: 50%
     margin-left: 5px
 
-#the-form
-  +breakpoint($large)
-    float: left
-    width: 50%
-    margin-right: 5px
-
 table
   width: 100%
-
-.params
-  max-width: 600px
-  margin: auto
-  margin-bottom: 48px
-
-.background
-  background-color: #ccc
-  padding: 0 5px
-  color: #ccc
-  font-size: 5px
-  line-height: 1
-
-.main-content
-  font-size: $font-size
-  color: #000
-  max-width: 600px
-  margin: auto
-  background-color: #fff
-  padding: 1px 16px
-  line-height: 1.3
-
-#the-email img
-  max-width: 100%
-  text-align: center
-  margin: auto
-  display: block
-
-h1, h2, h3
-  text-align: center
-  color: $accent-color
-
-a.button
-  display: inline-block
-  margin: 6px
-  padding: 20px 15px
-  color: #fff
-  background-color: $accent-color
-  text-decoration: none
-
-.center
-  margin-left: auto
-  margin-right: auto
-  text-align: center
