@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  isHome: true,
   header: "Hi, I'm The Fonz.",
   body: "I am excited to say things with *italics* and **bold** and [links](http://www.example.com)!\n\nSincerely,  \nArthur Fonzarelli",
 
