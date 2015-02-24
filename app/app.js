@@ -13,10 +13,4 @@ var App = Ember.Application.extend({
 
 loadInitializers(App, config.modulePrefix);
 
-Ember.TextArea.reopen({
-  didInsertElement: function(){
-    this.$().elastic();
-  }
-});
-
 export default App;
