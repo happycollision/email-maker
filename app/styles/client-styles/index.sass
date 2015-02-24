@@ -1,0 +1,56 @@
+@import "base"
+
+$accent-color: #6B90B5
+
+@import "define-colors"
+
+.plain-email
+  max-width: 900px
+  box-shadow: 3px 3px 12px #ccc
+  padding: 12px
+  margin: 48px auto
+
+.html-email
+  max-width: 900px
+  margin: auto
+
+  img
+    max-width: 100%
+
+  a.button
+    display: inline-block
+    margin: 6px
+    padding: 20px 15px
+    color: #fff
+    background-color: $accent-color
+    text-decoration: none
+
++breakpoint($large)
+  .html-email
+    width: 60%
+    float: right
+  .plain-email
+    width: 38%
+    float: left
+    margin: auto 1%
+
+#the-email
+  
+  .main-content
+    max-width: 600px
+    border: 5px solid $accent-color
+    margin: auto
+    padding: 12px
+
+  img
+    max-width: 100%
+    display: block
+    margin: 12px auto
+
+  a.button
+    display: inline-block
+    margin: 6px
+    padding: 20px 15px
+    color: #fff
+    background-color: $accent-color
+    text-decoration: none

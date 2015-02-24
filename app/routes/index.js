@@ -1,7 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  beforeModel: function(){
-    this.transitionTo('carol');
+  actions:{
+    didTransition: function(){
+      $('html head').find('.client-styles').remove();
+      $('html head').append('<link rel="stylesheet" class="client-styles" href="assets/client-styles/index.css">');
+    }    
   }
 });
