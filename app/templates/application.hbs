@@ -2,6 +2,8 @@
   <h1 class="site-title">The <span class="happy-collision"><span>Happy</span> <span>Collision</span></span> Magic Email Maker</h1>
 </header>
 
-<div class="main-app-content">
-  {{outlet}}  
+<div id="page" {{bind-attr class=dasherizedPath}}>
+  <div class="main-app-content">
+    {{outlet}}  
+  </div>
 </div>
