@@ -26,5 +26,6 @@ if (app.env === 'development') {
 // along with the exports of each module as its value.
 
 app.import('bower_components/jakobmattsson-jquery-elastic/jquery.elastic.source.js');
+app.import('bower_components/fastclick/lib/fastclick.js');
 
 module.exports = app.toTree();

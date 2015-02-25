@@ -4,7 +4,8 @@
     "window",
     "-Promise",
     "$",
-    "Em"
+    "Em",
+    "FastClick"
   ],
   "browser": true,
   "boss": true,
