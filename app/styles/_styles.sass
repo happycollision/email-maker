@@ -2,6 +2,11 @@
 *
   box-sizing: border-box
 
+nav
+  position: absolute
+  right: $body-padding
+  bottom: 1em
+
 .happy-collision
   span:first-child
     color: #F1A53E
@@ -12,6 +17,8 @@
     margin-left: -0.5em
 
 header.site-header
+  +clearfix
+  position: relative
   background: #f4f4f4
   color: #222
   margin: -8px -8px 0
