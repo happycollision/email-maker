@@ -1,15 +1,15 @@
-
-$accent-color: #6B90B5
+$accent-color: #C02A47
 
 @import "define-colors"
+
+$accent-color: #6B90B5 // Blue
+$email-accent-color: #C02A47 // Red
 
 #page.index
 
   h1, h2, h3
     color: #fff
     font-weight: normal
-
-
 
   .plain-email
     background-color: #eee
@@ -30,13 +30,16 @@ $accent-color: #6B90B5
     img
       max-width: 100%
 
-    a.button
+    a.button:link, a.button:visited, a.button:hover, a.button
       display: inline-block
       margin: 6px
       padding: 20px 15px
       color: #fff
       background-color: $accent-color
       text-decoration: none
+
+    a:link, a:visited, a:hover, a
+      color: $accent-color
 
   +breakpoint($large)
     .html-email
@@ -47,17 +50,23 @@ $accent-color: #6B90B5
       float: left
       margin: auto 1%
 
+  #the-form
+    input, .ember-text-field
+      border-color: $email-accent-color
+
+
+  
   #the-email
     padding-bottom: 0
     
     .main-content
       max-width: 600px
-      border: 5px solid $accent-color
+      border: 5px solid $email-accent-color
       margin: auto
       padding: 12px
 
     h1
-      color: $accent-color
+      color: $email-accent-color
 
     img
       max-width: 100%
@@ -69,13 +78,14 @@ $accent-color: #6B90B5
       margin: 6px
       padding: 20px 15px
       color: #fff
-      background-color: $accent-color
+      background-color: $email-accent-color
       text-decoration: none
 
   $color1: #49A370 // green
   $color2: #fff
   $color3: $accent-color
-  $color4: #C0742A // <- orange, red: #C02A47
+  $color4: #654686 // purple 
+  // orange: #C0742A
 
   .main-app-content > section
     +clearfix
@@ -100,6 +110,9 @@ $accent-color: #6B90B5
     margin: 0 (-$body-padding) 3em
     padding: $body-padding
 
+    +breakpoint($small)
+      margin-bottom: 1em
+
     h1, h2, h3
       color: #fff
       font-weight: normal
@@ -107,8 +120,16 @@ $accent-color: #6B90B5
       text-shadow: 2px 2px 3px rgba(0,0,0,0.3)
     h1
       font-size: $font-size * 3
+      font-weight: bold
     h2
       font-size: $font-size * 2.3
+
+    +breakpoint($small)
+      h1
+        font-size: $font-size * 1.75
+      h2
+        font-size: $font-size * 1.3
+
     h1 ~ h2
       margin-top: -1em
 
