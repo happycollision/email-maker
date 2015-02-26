@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   isHome: true,
   header: "Hi, I'm The Fonz.",
-  body: "Eeeeeyyy! All the cool kids send emails with *italic text* and **bold text** and [links](http://en.wikipedia.org/wiki/Fonzie)!\n\nSincerely,  \nArthur \"The Fonz\" Fonzarelli",
+  body: "Eeeeeyyy! All the cool kids send emails with *italic text* and **bold text** and [links](http://en.wikipedia.org/wiki/Fonzie)!",
 
   vButton: Em.computed.and('vButtonLink', 'vButtonText'),
 
