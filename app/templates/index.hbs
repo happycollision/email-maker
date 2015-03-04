@@ -159,72 +159,78 @@
   <h1>Try it yourself!</h1>
 </header>
 
-{{partial "explainers/instructions"}}
-
-<div id="try-it" class="group">
-  <div id="the-form">
-    <label for="header" class="text-label">Before Image:</label>
-    {{input type="text" name="header" value=header}}
-    
-    <div class="button-value-group">
-      <div class="button-value">
-        <label for="video-text" class="text-label">Video Button Text:</label>
-        {{input type="text" name="video-text" value=vButtonText}}
-      </div>
-      <div class="button-value">
-        <label for="video-link" class="text-label">Video Button Link:</label>
-        {{input type="text" name="video-link" value=vButtonLink}}
-      </div>
-    </div>
-
-    <label class="text-label">Choose an image below</label>
-    {{flickr-pickr galleryId="72157623797026921" limit="19,0,8,33,31" desiredWidth="75" chosenId=chosenId}}
-    
-    <label class="text-label">Body: (Edit the text below using 
-      {{#view "info-pop"}}<span class="info-pop-trigger">Markdown</span>.)
-        <span class="info-pop-info">
-          {{partial "explainers/markdown"}}
-        </span>
-      {{/view}}
-    </label>
-    
-    {{textarea value=body}}
-  </div>
+<div class="examples group">
   
+  {{partial "explainers/instructions"}}
 
+  <div id="try-it" class="group">
+    <div class="the-form-wrapper">
+      <div id="the-form">
+        <label for="header" class="text-label">Before Image:</label>
+        {{input type="text" name="header" value=header}}
+        
+        <div class="button-value-group">
+          <div class="button-value">
+            <label for="video-text" class="text-label">Video Button Text:</label>
+            {{input type="text" name="video-text" value=vButtonText}}
+          </div>
+          <div class="button-value">
+            <label for="video-link" class="text-label">Video Button Link:</label>
+            {{input type="text" name="video-link" value=vButtonLink}}
+          </div>
+        </div>
 
-
-
-  <div id="the-email">
-    <table><tr><td class="background">
-    <div class="pre-header">
-      &nbsp;
-    </div>
-    <div class="main-content">
-      <h1>
-        {{header}}
-      </h1>
-      {{flickr-image imageId=chosenId desiredWidth="400"}}
-
-      <h2>{{header2}}</h2>
-
-      <p class="center">
-        {{#if vButton}}
-          <a class="button" {{bind-attr href=vButtonLink}} target="_blank">{{vButtonText}}</a>
-        {{/if}}
-      </p>
-
-      {{markdown-section content=body}}
-      <div class="content">
-        <p>Sincerely,<br> Arthur <span class="sig">"The Fonz"</span> Fonzarelli</p>
+        <label class="text-label">Choose an image below</label>
+        {{flickr-pickr galleryId="72157623797026921" limit="19,0,8,33,31" desiredWidth="75" chosenId=chosenId}}
+        
+        <label class="text-label">Body: (Edit the text below using 
+          {{#view "info-pop"}}<span class="info-pop-trigger">Markdown</span>.)
+            <span class="info-pop-info">
+              {{partial "explainers/markdown"}}
+            </span>
+          {{/view}}
+        </label>
+        
+        {{textarea value=body}}
       </div>
     </div>
-    <div class="catch">
-      &nbsp;
+    
+
+
+
+
+    <div id="the-email">
+      <table><tr><td class="background">
+      <div class="pre-header">
+        &nbsp;
+      </div>
+      <div class="main-content">
+        <h1>
+          {{header}}
+        </h1>
+        {{flickr-image imageId=chosenId desiredWidth="400"}}
+
+        <h2>{{header2}}</h2>
+
+        <p class="center">
+          {{#if vButton}}
+            <a class="button" {{bind-attr href=vButtonLink}} target="_blank">{{vButtonText}}</a>
+          {{/if}}
+        </p>
+
+        {{markdown-section content=body}}
+        <div class="content">
+          <p>Sincerely,<br> Arthur <span class="sig">"The Fonz"</span> Fonzarelli</p>
+        </div>
+      </div>
+      <div class="catch">
+        &nbsp;
+      </div>
+      </td></tr></table>
     </div>
-    </td></tr></table>
   </div>
 </div>
+
 </section>
 
 <section>
