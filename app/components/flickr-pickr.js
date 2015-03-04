@@ -4,6 +4,7 @@ export default Ember.Component.extend({
   galleryId: null,
   desiredWidth: 75,
   chosenId: null,
+  limit: null,
 
   key: 'c2dfff46955d313d86bcd1a051f57af7',
   imageIds: null,
@@ -38,9 +39,27 @@ export default Ember.Component.extend({
 
     $promise.done(function(response){
       var imageIds = [];
-      for (var i = response.photoset.photo.length - 1; i >= 0; i--) {
-        imageIds.push(response.photoset.photo[i].id);
+      var limit = that.get('limit');
+      
+      if ( limit.indexOf(',') > -1 ) {
+        //only get the specified images
+        limit = limit.split(',');
+        console.log(limit);
+        for (var i = limit.length - 1; i >= 0; i--) {
+          imageIds.unshift(response.photoset.photo[limit[i]].id);
+        };
+      } else if (typeof limit === 'number') {
+        // get only x number of images
+        for (var i = limit - 1; i >= 0; i--) {
+          imageIds.unshift(response.photoset.photo[i].id);
+        };
+      } else {
+        // get them all
+        for (var i = response.photoset.photo.length - 1; i >= 0; i--) {
+          imageIds.unshift(response.photoset.photo[i].id);
+        }        
       }
+      
       that.set('imageIds', imageIds);
     });
   }.observes('galleryId').on('init')
