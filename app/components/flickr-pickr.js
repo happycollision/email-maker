@@ -47,17 +47,17 @@ export default Ember.Component.extend({
         limit = limit.split(',');
         console.log(limit);
         for (i = limit.length - 1; i >= 0; i--) {
-          imageIds.unshift(response.photoset.photo[limit[i]].id);
+          imageIds.push(response.photoset.photo[limit[i]].id);
         }
       } else if (typeof limit === 'number') {
         // get only x number of images
         for (i = limit - 1; i >= 0; i--) {
-          imageIds.unshift(response.photoset.photo[i].id);
+          imageIds.push(response.photoset.photo[i].id);
         }
       } else {
         // get them all
         for (i = response.photoset.photo.length - 1; i >= 0; i--) {
-          imageIds.unshift(response.photoset.photo[i].id);
+          imageIds.push(response.photoset.photo[i].id);
         }        
       }
       
