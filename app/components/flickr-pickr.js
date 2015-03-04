@@ -41,7 +41,7 @@ export default Ember.Component.extend({
       var imageIds = [];
       var limit = that.get('limit');
       
-      if ( limit.indexOf(',') > -1 ) {
+      if ( typeof limit === 'string' && limit.indexOf(',') > -1 ) {
         //only get the specified images
         limit = limit.split(',');
         console.log(limit);
