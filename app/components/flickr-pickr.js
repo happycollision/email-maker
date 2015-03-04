@@ -40,22 +40,23 @@ export default Ember.Component.extend({
     $promise.done(function(response){
       var imageIds = [];
       var limit = that.get('limit');
+      var i;
       
       if ( typeof limit === 'string' && limit.indexOf(',') > -1 ) {
         //only get the specified images
         limit = limit.split(',');
         console.log(limit);
-        for (var i = limit.length - 1; i >= 0; i--) {
+        for (i = limit.length - 1; i >= 0; i--) {
           imageIds.unshift(response.photoset.photo[limit[i]].id);
-        };
+        }
       } else if (typeof limit === 'number') {
         // get only x number of images
-        for (var i = limit - 1; i >= 0; i--) {
+        for (i = limit - 1; i >= 0; i--) {
           imageIds.unshift(response.photoset.photo[i].id);
-        };
+        }
       } else {
         // get them all
-        for (var i = response.photoset.photo.length - 1; i >= 0; i--) {
+        for (i = response.photoset.photo.length - 1; i >= 0; i--) {
           imageIds.unshift(response.photoset.photo[i].id);
         }        
       }
