@@ -2,6 +2,8 @@
 
 This project is used for my clients to help them build html emails to send out. I am leaving the standard Ember CLI created readme instructions below in case this project is helpful for anyone learning Ember CLI.
 
+All rights reserved. You may use this repo for learning purposes, but please do not be a jerk. :wink:
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
