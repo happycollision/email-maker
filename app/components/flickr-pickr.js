@@ -45,7 +45,6 @@ export default Ember.Component.extend({
       if ( typeof limit === 'string' && limit.indexOf(',') > -1 ) {
         //only get the specified images
         limit = limit.split(',');
-        console.log(limit);
         for (i = limit.length - 1; i >= 0; i--) {
           imageIds.unshift(response.photoset.photo[limit[i]].id);
         }
