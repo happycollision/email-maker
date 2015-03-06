@@ -42,15 +42,18 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.baseURL = '/';
     ENV.contentSecurityPolicyHeader = "Content-Security-Policy";
+    ENV.googleAnalytics = {
+      webPropertyId: 'UA-60434518-1'
+    };
   }
 
   ENV.contentSecurityPolicy = {
     //'default-src': "'none'",
     'frame-src': "https://*.wufoo.com",
-    'script-src': "'self' 'unsafe-inline' http://*.wufoo.com http://cdnjs.cloudflare.com/ajax/libs/marked/", // Allow scripts from https://cdn.mxpnl.com
+    'script-src': "'self' 'unsafe-inline' http://*.wufoo.com http://cdnjs.cloudflare.com/ajax/libs/marked/ https://www.google-analytics.com", // Allow scripts from https://cdn.mxpnl.com
     // 'font-src': "'self' http://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
     'connect-src': "'self' https://api.flickr.com", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
-    'img-src': "'self' https://*.flickr.com https://*.staticflickr.com",
+    'img-src': "'self' https://*.flickr.com https://*.staticflickr.com https://www.google-analytics.com",
     'style-src': "'self' 'unsafe-inline'", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
     // 'media-src': "'self'"
   };
