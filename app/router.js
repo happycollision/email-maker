@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('carol');
   this.route('terms');
   this.route('dondentonactor');
+  this.route('the-fonz-life-coach');
 });
 
 export default Router;
