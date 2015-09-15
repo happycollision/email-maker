@@ -1,13 +1,13 @@
   <label for="pre-header" class="text-label pre-header-input">
     Pre-header text: {{input type="checkbox" checked=view.usePreHeader}}
-    {{#view 'info-pop'}}
+    {{#info-pop}}
       <span class="info-pop-trigger">
         ?
       </span>
       <span class="info-pop-info">
         {{partial "explainers/pre-headers"}}
       </span>
-    {{/view}}
+    {{/info-pop}}
   </label>
   
   {{input type="text" class="pre-header-input" name="preheader" value=view.preHeaderInput}}
