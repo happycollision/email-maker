@@ -1,11 +1,8 @@
 import Ember from 'ember';
 
-export default Ember.View.extend({
-  templateName: 'pre-header-text',
+export default Ember.Component.extend({
   didInsertElement: function(){
-    var binding = Em.Binding.from('preHeader').to('controller.preHeader');
-    //console.log(this.controller.preHeader)
-    binding.connect( this );
+    this.preHeaderValue();
   },
 
   classNameBindings: ['usePreHeader::disabled'],
@@ -18,7 +15,7 @@ export default Ember.View.extend({
     var preHeaderInput = this.get('preHeaderInput');
     var usePreHeader = this.get('usePreHeader');
     if (usePreHeader === false || preHeaderInput === ''){
-      this.set('preHeader', '&nbsp;');
+      this.set('preHeader', '&nbsp;'.htmlSafe());
     } else {
       this.set('preHeader', preHeaderInput);
     }
