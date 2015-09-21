@@ -32,16 +32,16 @@
   {{flickr-pickr galleryId="72157650653171405" desiredWidth="75" chosenId=chosenId}}
   
   <label class="text-label">Body: (Edit the text below using 
-    {{#view "info-pop"}}<span class="info-pop-trigger">Markdown</span>.)
+    {{#info-pop}}<span class="info-pop-trigger">Markdown</span>.)
       <span class="info-pop-info">
         {{partial "explainers/markdown"}}
       </span>
-    {{/view}}
+    {{/info-pop}}
   </label>
   
   {{textarea value=body}}
 
-  {{view "pre-header-text"}}
+  {{pre-header-text preHeader=preHeader}}
 </form>
 
 
@@ -60,10 +60,10 @@
 
     <p class="center">
       {{#if vButton}}
-        <a class="button" {{bind-attr href=vButtonLink}}>{{vButtonText}}</a>
+        <a class="button" href={{vButtonLink}}>{{vButtonText}}</a>
       {{/if}}
       {{#if rButton}}
-        <a class="button" {{bind-attr href=rButtonLink}}>{{rButtonText}}</a>
+        <a class="button" href={{rButtonLink}}>{{rButtonText}}</a>
       {{/if}}
     </p>
 
